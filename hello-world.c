@@ -1,20 +1,24 @@
+#include "Drivers/Serial/PL011/Instance.h"
 
 #include <stdint.h>
+#include <stdlib.h>
 
-volatile uint32_t * const UART0_DR = (uint32_t *)(uintptr_t)(0x101f1000);
+PL011_Instance UART0;
 
-void uart0_write_string(const char * cstr)
+void print_string(const char * cstr)
 {
     while (*cstr != '\0')
     {
-        *UART0_DR = (uint32_t)(*cstr);
+        PL011_WriteData(&UART0, (uint8_t)(*cstr));
         ++cstr;
     }
 }
 
 void c_entrypoint()
 {
-    uart0_write_string("Hello World!");
+    PL011_Initialize(&UART0, NULL);
+
+    print_string("Hello World!");
 }
 
 // vim: et sw=4 sts=4:

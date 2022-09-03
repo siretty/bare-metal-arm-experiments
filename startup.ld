@@ -4,7 +4,7 @@ ENTRY(_Reset)
 SECTIONS
 {
     . = 0x10000;
-    .startup . : { startup.o(.text) }
+    .startup . : { startup.s.o(.text) }
 
     .text : { *(.text) }
     .data : { *(.data) }
