@@ -1,5 +1,5 @@
-#ifndef DRIVERS_SERIAL_PL011_INSTANCE_H
-#define DRIVERS_SERIAL_PL011_INSTANCE_H
+#ifndef DRIVERS_SERIAL_PL011_H
+#define DRIVERS_SERIAL_PL011_H
 
 #include <stdint.h>
 
@@ -16,6 +16,7 @@ void PL011_WriteData(const PL011_Instance *self, uint8_t byte);
 
 uint8_t PL011_ReadData(const PL011_Instance *self, uint32_t * flags);
 
-#endif // DRIVERS_SERIAL_PL011_INSTANCE_H
+#endif // DRIVERS_SERIAL_PL011_H
 
 // vim: et sw=4 sts=4:
+

@@ -1,0 +1,26 @@
+{
+  "version": 3,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 23,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "qemu-versatilepb",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/_b",
+      "toolchainFile": "${sourceDir}/targets/qemu-versatilepb/toolchain.cmake",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": true
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "qemu-versatilepb",
+      "configurePreset": "qemu-versatilepb"
+    }
+  ]
+}

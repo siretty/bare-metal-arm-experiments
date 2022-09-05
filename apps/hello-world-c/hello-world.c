@@ -1,11 +1,11 @@
 #include "Drivers/Serial/PL011/Instance.h"
 
+#include <stddef.h>
 #include <stdint.h>
-#include <stdlib.h>
 
 PL011_Instance UART0;
 
-void print_string(const char * cstr)
+void print_string(const char *cstr)
 {
     while (*cstr != '\0')
     {
@@ -14,11 +14,11 @@ void print_string(const char * cstr)
     }
 }
 
-void c_entrypoint()
+void System_Entrypoint()
 {
     PL011_Initialize(&UART0, NULL);
 
-    print_string("Hello World!");
+    print_string("Hello World!\n");
 }
 
 // vim: et sw=4 sts=4:
